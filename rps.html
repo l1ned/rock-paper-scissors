@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script>
+
+function computerPlay() {
+  let values = ["Rock", "Paper", "Scissors"];
+  let random = values[Math.floor(Math.random() * values.length)];
+  return random;
+}
+
+function playRound(playerSelection,computerSelection) {
+  if (playerSelection === "Rock" && computerSelection === "Paper") {
+    let result = "You Lose! Paper beats Rock!";
+    computerScore += 1;
+    alert(result);
+    return result;
+  } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+    let result = "You Win! Rock beats Scissors!";
+    playerScore +=1;
+    alert(result);
+    return result;
+  } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+    let result = "You Win! Paper beats Rock!";
+    playerScore +=1;
+    alert(result);
+    return result;
+  } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+    let result = "You Lose! Scissors beat Paper!";
+    computerScore += 1;
+    alert(result);
+    return result;
+  } else if (playerSelection === "Scissor" && computerSelection === "Rock") {
+    let result = "You Lose! Rock beats Scissors!";
+    computerScore += 1;
+    alert(result);
+    return result;
+  } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+    let result = "You Win! Scissors beats Paper!";
+    playerScore +=1;
+    alert(result);
+    return result;
+  } else {
+    let result = "Tie!";
+    alert(result);
+    return result;
+  }
+}
+
+function game() {
+  playerScore = 0
+  computerScore = 0
+
+  computerPlay();
+  playRound(answer= prompt("Choose Rock Paper or Scissors"), computerPlay())
+
+  computerPlay();
+  playRound(answer= prompt("Choose Rock Paper or Scissors"), computerPlay())
+
+  computerPlay();
+  playRound(answer= prompt("Choose Rock Paper or Scissors"), computerPlay())
+
+  computerPlay();
+  playRound(answer= prompt("Choose Rock Paper or Scissors"), computerPlay())
+
+  computerPlay();
+  playRound(answer= prompt("Choose Rock Paper or Scissors"), computerPlay())
+
+  if (playerScore>computerScore) {
+    alert("You win!");
+  }
+  if (playerScore<computerScore) {
+    alert("You Lost!");
+  }
+
+  if (playerScore == computerScore) {
+    alert("You tied in 5 games!")
+  }
+}
+
+game();
+
+
+</script>
+</body>
+</html>
